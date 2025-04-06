@@ -1,4 +1,4 @@
-lib_LIBRARIES = libjpeg.a
+noinst_LIBRARIES = libjpeg.a
 libjpeg_a_SOURCES = \
 	jcapi.c jccoefct.c jccolor.c jcdctmgr.c jchuff.c jcmainct.c \
         jcmarker.c jcmaster.c jcomapi.c jcparam.c jcprepct.c jcsample.c \
