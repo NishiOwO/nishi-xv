@@ -1,6 +1,6 @@
 CC = cc
 AR = ar
-CFLAGS = -Wno-deprecated-non-prototype -Wno-parentheses -Wno-format -Wno-format-security -Wno-knr-promoted-parameter -Wno-pointer-to-int-cast -Wno-stringop-overflow -Wno-int-to-pointer-cast -Wno-discarded-qualifiers -std=gnu89 `pkg-config --cflags x11` -fcommon -Isrc/jpeg -Isrc/tiff -Isrc/tiff -Isrc/png -DDOJPEG -DDOTIFF -DDOPNG
+CFLAGS = -Wno-deprecated-non-prototype -Wno-parentheses -Wno-format -Wno-format-security -Wno-knr-promoted-parameter -Wno-pointer-to-int-cast -Wno-stringop-overflow -Wno-int-to-pointer-cast -Wno-discarded-qualifiers -std=gnu89 `pkg-config --cflags x11` -fcommon -Isrc/jpeg -Isrc/tiff -Isrc/tiff -Isrc/png -DDOJPEG -DDOTIFF -DDOPNG $(DEFS)
 LDFLAGS =
 LIBS = `pkg-config --libs x11` -lm
 
