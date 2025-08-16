@@ -5,7 +5,6 @@
 config.log
 aclocal.m4
 autom4te.cache
-config.status
 Makefile
 .deps
 .dirstamp
