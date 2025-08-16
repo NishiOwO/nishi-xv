@@ -1,12 +1,3 @@
 *.o
-*.exe
 *.a
-*~
-config.log
-config.status
-aclocal.m4
-autom4te.cache
-Makefile
-.deps
-.dirstamp
-/src/xv/xv
+/xv
