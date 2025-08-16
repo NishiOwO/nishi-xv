@@ -75,6 +75,7 @@ TIFFDefaultRefBlackWhite(TIFFDirectory* td)
  *	explcit values so that defaults exist only one
  *	place in the library -- in TIFFDefaultDirectory.
  */
+int
 TIFFVGetFieldDefaulted(TIFF* tif, ttag_t tag, va_list ap)
 {
 	TIFFDirectory *td = &tif->tif_dir;
@@ -192,6 +193,7 @@ TIFFVGetFieldDefaulted(TIFF* tif, ttag_t tag, va_list ap)
  * Like TIFFGetField, but return any default
  * value if the tag is not present in the directory.
  */
+int
 TIFFGetFieldDefaulted(TIFF* tif, ttag_t tag, ...)
 {
 	int ok;

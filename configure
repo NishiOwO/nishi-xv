@@ -5467,6 +5467,8 @@ fi
 
 
 
+CFLAGS="$CFLAGS -Wno-deprecated-non-prototype -Wno-parentheses -Wno-format -Wno-format-security -Wno-Wknr-promoted-parameter -Wno-pointer-to-int-cast -Wno-stringop-overflow -Wno-int-to-pointer-cast -Wno-discarded-qualifiers -std=gnu89"
+
 
 
 

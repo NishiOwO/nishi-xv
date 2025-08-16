@@ -396,7 +396,7 @@ int TextView(fname)
   Dirtovd(filename);
 #endif
 
-  basefname[0] = '\0';
+  basefname[0] = NULL;
   strncpy(rfname, filename, sizeof(rfname) - 1);
 
   /* see if this file is compressed.  if it is, uncompress it, and view

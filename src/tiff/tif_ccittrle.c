@@ -33,6 +33,7 @@
 #include "tiffiop.h"
 #include "tif_fax3.h"
 
+int
 TIFFInitCCITTRLE(TIFF* tif)
 {
 	TIFFInitCCITTFax3(tif);		/* reuse G3 compression */

@@ -31,6 +31,7 @@
  */
 #include "tiffiop.h"
 
+int
 TIFFInitJPEG(TIFF* tif)
 {
 	return (1);

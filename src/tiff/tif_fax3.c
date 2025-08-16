@@ -214,7 +214,7 @@ Fax3SetupState(TIFF* tif, int space)
 /*
  * Setup state for decoding a strip.
  */
-static
+static int
 Fax3PreDecode(TIFF* tif)
 {
 	Fax3DecodeState *sp = (Fax3DecodeState *)tif->tif_data;
@@ -328,7 +328,7 @@ _fillspan(char* cp, int32 x, int32 count)
 /*
  * Decode the requested amount of data.
  */
-static
+static int
 Fax3Decode(TIFF* tif, tidata_t buf, tsize_t occ, tsample_t s)
 {
 	Fax3DecodeState *sp = (Fax3DecodeState *)tif->tif_data;
@@ -821,7 +821,7 @@ static const u_char oneruns[256] = {
 /*
  * Reset encoding state at the start of a strip.
  */
-static
+static int
 Fax3PreEncode(TIFF* tif)
 {
 	Fax3EncodeState *sp = (Fax3EncodeState *)tif->tif_data;
