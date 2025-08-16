@@ -373,6 +373,8 @@
 #ifndef VMS       /* VMS hates multi-line definitions */
 #  if defined(__linux__) || defined(__OpenBSD__) || defined(__NetBSD__) || \
       defined(__bsdi__)
+#    undef  USE_GETCWD
+#    define USE_GETCWD
 #    ifndef USE_MKSTEMP
 #      define USE_MKSTEMP       /* use 'mkstemp()' instead of 'mktemp()' */
 #    endif                      /* >> SECURITY ISSUE << */
