@@ -1,10 +1,12 @@
+PREFIX = /usr
+
 CC = cc
 AR = ar
 CFLAGS = -Wno-deprecated-non-prototype -Wno-parentheses -Wno-format -Wno-format-security -Wno-knr-promoted-parameter -Wno-pointer-to-int-cast -Wno-stringop-overflow -Wno-int-to-pointer-cast -Wno-discarded-qualifiers -std=gnu89 `pkg-config --cflags x11` -fcommon -Isrc/jpeg -Isrc/tiff -Isrc/tiff -Isrc/png -DDOJPEG -DDOTIFF -DDOPNG $(DEFS)
 LDFLAGS =
 LIBS = `pkg-config --libs x11` -lm
 
-.PHONY: all clean
+.PHONY: all clean install
 .SUFFIXES: .c .o
 
 OBJS += src/xv/vprintf.o src/xv/xv.o src/xv/xv24to8.o src/xv/xvalg.o src/xv/xvbmp.o src/xv/xvbrowse.o src/xv/xvbutt.o src/xv/xvcolor.o src/xv/xvctrl.o src/xv/xvcut.o src/xv/xvdflt.o src/xv/xvdial.o src/xv/xvdir.o src/xv/xvevent.o src/xv/xvfits.o src/xv/xvgam.o src/xv/xvgif.o src/xv/xvgifwr.o src/xv/xvgrab.o src/xv/xvgraf.o src/xv/xvhips.o src/xv/xviff.o src/xv/xvimage.o src/xv/xvinfo.o src/xv/xviris.o src/xv/xvjp2k.o src/xv/xvjpeg.o src/xv/xvmag.o src/xv/xvmaki.o src/xv/xvmgcsfx.o src/xv/xvmisc.o src/xv/xvml.o src/xv/xvpbm.o src/xv/xvpcd.o src/xv/xvpcx.o src/xv/xvpds.o src/xv/xvpi.o src/xv/xvpic.o src/xv/xvpic2.o src/xv/xvpm.o src/xv/xvpng.o src/xv/xvpopup.o src/xv/xvps.o src/xv/xvrle.o src/xv/xvroot.o src/xv/xvscrl.o src/xv/xvsmooth.o src/xv/xvsunras.o src/xv/xvtarga.o src/xv/xvtext.o src/xv/xvtiff.o src/xv/xvtiffwr.o src/xv/xvvd.o src/xv/xvwbmp.o src/xv/xvxbm.o src/xv/xvxpm.o src/xv/xvxwd.o src/xv/xvzx.o
@@ -44,6 +46,10 @@ libz.a: $(ZLIB_OBJS)
 
 .c.o:
 	$(CC) $(CFLAGS) -c -o $@ $<
+
+install: all
+	mkdir -p $(PREFIX)/bin
+	cp xv $(PREFIX)/bin/
 
 clean:
 	rm -f src/*/*.o xv *.a
